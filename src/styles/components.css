@@ -1,0 +1,93 @@
+@layer components {
+
+     /* ==================== BUTTON ==================== */
+     .btn {
+          @apply inline-flex items-center justify-center gap-2 font-sans font-medium rounded-sm transition-colors duration-150 select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
+     }
+
+     .btn-disabled {
+          @apply cursor-not-allowed opacity-50 pointer-events-none;
+     }
+
+     .btn-sm {
+          @apply px-3 py-1.5 text-sm;
+     }
+
+     .btn-md {
+          @apply px-4 py-2 text-base;
+     }
+
+     .btn-lg {
+          @apply px-6 py-3 text-lg;
+     }
+
+     /* ---------- Primary ---------- */
+     .btn-primary {
+          @apply bg-primary-500 text-white shadow-xs;
+     }
+
+     .btn-primary:hover:not(:disabled) {
+          @apply bg-primary-700;
+     }
+
+     .btn-primary:active:not(:disabled) {
+          @apply bg-primary-900 shadow-none;
+     }
+
+     .btn-primary:focus-visible {
+          @apply ring-primary-300;
+     }
+
+     /* ---------- Secondary ---------- */
+     .btn-secondary {
+          @apply bg-white text-primary-700 border border-primary-300 shadow-xs;
+     }
+
+     .btn-secondary:hover:not(:disabled) {
+          @apply bg-primary-50 border-primary-500;
+     }
+
+     .btn-secondary:active:not(:disabled) {
+          @apply bg-primary-100 border-primary-700;
+     }
+
+     .btn-secondary:focus-visible {
+          @apply ring-primary-300;
+     }
+
+     .btn-danger {
+          @apply text-white shadow-xs;
+          background-color: var(--color-error);
+     }
+
+     .btn-danger:hover:not(:disabled) {
+          background-color: color-mix(in srgb, var(--color-error) 85%, black);
+     }
+
+     .btn-danger:active:not(:disabled) {
+          @apply shadow-none;
+          background-color: color-mix(in srgb, var(--color-error) 70%, black);
+     }
+
+     .btn-danger:focus-visible {
+          --tw-ring-color: var(--color-error);
+     }
+
+     /* ---------- Ghost ---------- */
+     .btn-ghost {
+          @apply bg-transparent text-neutral-700;
+     }
+
+     .btn-ghost:hover:not(:disabled) {
+          @apply bg-neutral-100 text-neutral-900;
+     }
+
+     .btn-ghost:active:not(:disabled) {
+          @apply bg-neutral-200;
+     }
+
+     .btn-ghost:focus-visible {
+          @apply ring-neutral-300;
+     }
+
+}

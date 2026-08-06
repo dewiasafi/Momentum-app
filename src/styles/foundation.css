@@ -1,0 +1,103 @@
+@theme {
+
+  /* ==========================================================
+     COLORS
+     ========================================================== */
+
+  /* ---------- Brand : Primary (Green) ---------- */
+
+  --color-primary-50: #F1FAF4;
+  --color-primary-100: #DDF3E5;
+  --color-primary-300: #A8D5BA;
+  --color-primary-500: #6FB98F;
+  --color-primary-700: #3E8E63;
+  --color-primary-900: #24543B;
+
+  /* ---------- Brand : Blue ---------- */
+
+  --color-blue-50: #F2F7FF;
+  --color-blue-100: #DCEAFF;
+  --color-blue-300: #A8C7FA;
+  --color-blue-500: #5B8DEF;
+  --color-blue-700: #315BB5;
+
+  /* ---------- Brand : Yellow ---------- */
+
+  --color-yellow-50: #FFFBEA;
+  --color-yellow-100: #FFF3C4;
+  --color-yellow-300: #FFE7A0;
+  --color-yellow-500: #F5C542;
+
+  /* ---------- Brand : Pink ---------- */
+
+  --color-pink-50: #FFF4F7;
+  --color-pink-100: #FDE2EA;
+  --color-pink-300: #F8C8DC;
+  --color-pink-500: #E88BA7;
+
+  /* ---------- Neutral ---------- */
+
+  --color-white: #FFFFFF;
+
+  --color-neutral-50: #FAF7F2;
+  --color-neutral-100: #F3EFE8;
+  --color-neutral-200: #EAE7E2;
+  --color-neutral-300: #D6D1CA;
+  --color-neutral-400: #A8A29A;
+  --color-neutral-500: #78716C;
+  --color-neutral-600: #57534E;
+  --color-neutral-700: #44403C;
+  --color-neutral-800: #292524;
+  --color-neutral-900: #111111;
+
+  --color-black: #000000;
+  --color-transparent: transparent;
+
+  /* ---------- Semantic ---------- */
+
+  --color-success: #52C41A;
+  --color-success-bg: #F6FFED;
+
+  --color-warning: #FAAD14;
+  --color-warning-bg: #FFFBE6;
+
+  --color-error: #FF4D4F;
+  --color-error-bg: #FFF1F0;
+
+  --color-info: #1890FF;
+  --color-info-bg: #E6F7FF;
+
+
+  /* ==========================================================
+     TYPOGRAPHY
+     ========================================================== */
+
+  /* Font Family */
+
+  --font-sans: "Inter", sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-handwriting: "Caveat", cursive;
+
+  /* ==========================================================
+     BORDER RADIUS
+     ========================================================== */
+
+  --radius-none: 0px;
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* ==========================================================
+     SHADOW
+     ========================================================== */
+
+  --shadow-xs: 0 1px 2px rgb(0 0 0 / 0.05);
+  --shadow-sm: 0 2px 8px rgb(0 0 0 / 0.08);
+  --shadow-md: 0 4px 16px rgb(0 0 0 / 0.10);
+  --shadow-lg: 0 8px 24px rgb(0 0 0 / 0.12);
+  --shadow-xl: 0 12px 32px rgb(0 0 0 / 0.15);
+
+}
