@@ -90,4 +90,151 @@
           @apply ring-neutral-300;
      }
 
+     /* CHECKBOX */
+
+     .checkbox-wrapper {
+          @apply flex items-start gap-2;
+     }
+
+     .checkbox-indicatpor {
+          @apply relative flex items-center h-5 shrink-0;
+     }
+
+     .checkbox-input {
+          @apply sr-only;
+     }
+
+     .checkbox-box {
+          @apply flex items-center justify-center rounded-xs border bg-white border-neutral-300 transition-colors;
+          @apply peer-[:hover:not(:disabled)]:border-neutral-400;
+          @apply peer-checked:bg-primary-500 peer-checked:border-primary-500;
+          @apply peer-focus-visible:ring-2 peer-focus-visible:ring-primary-300 peer-focus-visible:ring-offset-1;
+          @apply peer-disabled:bg-neutral-100 peer-disabled:border-neutral-200;
+     }
+
+     .checkbox-box-sm {
+          @apply w-4 h-4;
+     }
+
+     .checkbox-box-md {
+          @apply w-[18px] h-[18px];
+     }
+
+     .checkbox-box-lg {
+          @apply w-5 h-5;
+     }
+
+     .checkbox-icon {
+          @apply text-white;
+     }
+
+     .checkbox-label {
+          @apply cursor-pointer text-neutral-700;
+     }
+
+     .checkbox-label-disabled {
+          @apply cursor-not-allowed text-neutral-400;
+     }
+
+     .checkbox-label-text {
+          @apply font-medium leading-5;
+          color: inherit;
+     }
+
+     .checkbox-label-text-sm {
+          @apply text-xs;
+     }
+
+     .checkbox-label-text-md {
+          @apply text-sm;
+     }
+
+     .checkbox-label-text-lg {
+          @apply text-base;
+     }
+
+     .checkbox-description {
+          @apply text-xs mt-0.5;
+          color: inherit;
+          opacity: 0.85;
+     }
+
+     /* RADIOGROUP */
+     .radio-group {
+          @apply flex flex-col gap-2;
+     }
+
+     .radio-group-horizontal {
+          @apply flex-row flex-wrap gap-x-4 gap-y-2;
+     }
+
+     .radio-wrapper {
+          @apply flex items-start gap-2;
+     }
+
+     .radio-indicator {
+          @apply relative flex items-center h-5 shrink-0;
+     }
+
+     .radio-input {
+          @apply sr-only;
+     }
+
+     .radio-circle {
+          @apply relative flex items-center justify-center rounded-full border bg-white border-neutral-300 transition-colors;
+          @apply after:content-[''] after:block after:rounded-full after:bg-primary-500 after:opacity-0 after:transition-opacity;
+
+          @apply peer-[:hover:not(:disabled)]:border-neutral-400;
+          @apply peer-checked:border-primary-500 peer-checked:after:opacity-100;
+          @apply peer-focus-visible:ring-2 peer-focus-visible:ring-primary-300 peer-focus-visible:ring-offset-1;
+          @apply peer-disabled:bg-neutral-100 peer-disabled:border-neutral-200;
+     }
+
+     .radio-circle-sm {
+          @apply w-4 h-4 after:w-1.5 after:h-1.5;
+     }
+
+     /* 16px, dot 6px */
+     .radio-circle-md {
+          @apply w-[18px] h-[18px] after:w-2 after:h-2;
+     }
+
+     /* 18px, dot 8px */
+     .radio-circle-lg {
+          @apply w-5 h-5 after:w-2.5 after:h-2.5;
+     }
+
+     /* 20px, dot 10px */
+
+     .radio-label {
+          @apply cursor-pointer text-neutral-700;
+     }
+
+     .radio-label-disabled {
+          @apply cursor-not-allowed text-neutral-400;
+     }
+
+     .radio-label-text {
+          @apply font-medium leading-5;
+          color: inherit;
+     }
+
+     .radio-label-text-sm {
+          @apply text-xs;
+     }
+
+     .radio-label-text-md {
+          @apply text-sm;
+     }
+
+     .radio-label-text-lg {
+          @apply text-base;
+     }
+
+     .radio-description {
+          @apply text-xs mt-0.5;
+          color: inherit;
+          opacity: 0.85;
+     }
+
 }
