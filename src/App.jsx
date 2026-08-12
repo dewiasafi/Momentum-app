@@ -1,13 +1,21 @@
-import { SearchIcon } from "lucide-react"
-import { Button, Checkbox, Input, RadioGroup, Select, Textarea } from "./components/ui"
+import { SearchIcon } from "lucide-react";
+import {
+  Button,
+  Checkbox,
+  Input,
+  RadioGroup,
+  Select,
+  Switch,
+  Textarea,
+} from "./components/ui";
 import { useState } from "react";
-
 
 function App() {
   const [agree, setAgree] = useState(false);
   const [plan, setPlan] = useState("pro");
+  const [notif, setNotif] = useState(false);
 
-  console.log("Agree", agree)
+  console.log("Agree", agree);
   return (
     <div className="h-screen items-center justify-center bg-primary-50 p-10">
       <h1 className="text-3xl font-sans font-bold text-primary-700">
@@ -15,15 +23,12 @@ function App() {
       </h1>
       <div>
         <Button variant="primary">Simpan</Button>
-
         <Input label="Email" type="email" required />
         <Input label="Cari" leftIcon={<SearchIcon size={16} />} size="sm" />
         <Input label="Kode Promo" errorText="Kode tidak valid" />
-
         <Textarea label="Deskripsi" required />
         <Textarea disabled label="Bio" maxLength={200} showCount value="test" />
         <Textarea label="Catatan" resize="none" errorText="Wajib diisi" />
-
         <Select
           label="Provinsi"
           placeholder="Pilih provinsi"
@@ -35,7 +40,6 @@ function App() {
           ]}
           required
         />
-
         <Select
           label="Status"
           errorText="Wajib pilih status"
@@ -46,16 +50,13 @@ function App() {
         />
         <Checkbox size="lg" label="Saya setuju dengan syarat & ketentuan" />
         <Checkbox label="Saya setuju dengan syarat & ketentuan" />
-
         <Checkbox
           size="sm"
           label="Saya setuju dengan syarat & ketentuan"
           checked={agree}
           onChange={(e) => setAgree(e.target.checked)}
         />
-
         const [plan, setPlan] = useState("pro");
-
         <RadioGroup
           label="Pilih paket"
           value={plan}
@@ -66,8 +67,20 @@ function App() {
             { label: "Enterprise", value: "enterprise", disabled: true },
           ]}
         />
+        <Switch
+          label="Notifikasi Email"
+          description="Dapetin update lewat email"
+          checked={notif}
+          onChange={(e) => setNotif(e.target.checked)}
+        />
+        <Switch label="Mode Gelap" size="lg" />
+        <Switch label="Fitur Beta" disabled />
+        <Switch
+          label="Wajib diaktifkan"
+          errorText="Fitur ini wajib nyala untuk lanjut"
+        />
       </div>
     </div>
-  )
+  );
 }
-export default App
+export default App;
