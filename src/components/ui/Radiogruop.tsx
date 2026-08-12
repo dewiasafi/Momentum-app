@@ -1,6 +1,6 @@
 import { useId } from "react";
 import type { FieldSize } from "./field.styles";
-import FormField from "./Formfield";
+import FormField from "./FormField";
 
 const CIRCLE_SIZE_CLASSES: Record<FieldSize, string> = {
      sm: "radio-circle-sm",

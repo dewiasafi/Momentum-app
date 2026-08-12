@@ -1,6 +1,6 @@
 import { forwardRef, InputHTMLAttributes, ReactNode } from "react";
 import { getFieldClassName, type FieldVariants } from "./field.styles";
-import FormField from "./Formfield";
+import FormField from "./FormField";
 
 export interface InputProps
      extends Omit<InputHTMLAttributes<HTMLInputElement>, "size">,

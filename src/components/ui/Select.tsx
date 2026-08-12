@@ -1,6 +1,6 @@
 import { forwardRef, ReactNode, SelectHTMLAttributes } from "react";
 import { type FieldVariants, getFieldClassName } from "./field.styles";
-import FormField from "./Formfield";
+import FormField from "./FormField";
 
 export interface SelectOption {
      label: string;

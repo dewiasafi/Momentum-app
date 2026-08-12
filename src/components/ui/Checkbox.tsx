@@ -1,6 +1,6 @@
 import { forwardRef, InputHTMLAttributes, ReactNode, useEffect, useRef } from "react";
-import FormField from "./Formfield";
 import type { FieldSize } from "./field.styles";
+import FormField from "./FormField";
 
 const BOX_SIZE_CLASSES: Record<FieldSize, string> = {
      sm: "checkbox-box-sm",

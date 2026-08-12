@@ -1,6 +1,6 @@
 import { forwardRef, TextareaHTMLAttributes } from "react";
 import { getFieldClassName, type FieldVariants } from "./field.styles";
-import FormField from "./Formfield";
+import FormField from "./FormField";
 
 export type TextareaResize = "none" | "vertical" | "horizontal" | "both";
 
