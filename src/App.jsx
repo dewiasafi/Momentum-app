@@ -1,83 +1,101 @@
-import { SearchIcon } from "lucide-react";
 import {
+  Avatar,
+  AvatarGroup,
+  Badge,
   Button,
-  Checkbox,
-  Input,
-  RadioGroup,
-  Select,
-  Switch,
-  Textarea,
+  Card,
 } from "./components/ui";
-import { useState } from "react";
+
 
 function App() {
-  const [agree, setAgree] = useState(false);
-  const [plan, setPlan] = useState("pro");
-  const [notif, setNotif] = useState(false);
-
-  console.log("Agree", agree);
+  const users = [
+    {
+      id: 1,
+      name: "Deasy Safitri",
+      src: "https://i.pinimg.com/736x/76/cf/2c/76cf2c70697b3ba37f7d9e96c14ba4dc.jpg",
+      status: "online",
+    },
+    {
+      id: 2,
+      name: "John Doe",
+      src: "https://i.pinimg.com/736x/76/cf/2c/76cf2c70697b3ba37f7d9e96c14ba4dc.jpg",
+      status: "busy",
+    },
+    {
+      id: 3,
+      name: "Jane Smith",
+      status: "away",
+    },
+    {
+      id: 4,
+      name: "Michael",
+    },
+    {
+      id: 5,
+      name: "Alex",
+    },
+  ];
   return (
     <div className="h-screen items-center justify-center bg-primary-50 p-10">
       <h1 className="text-3xl font-sans font-bold text-primary-700">
         Setup berhasil! 🎉
       </h1>
       <div>
-        <Button variant="primary">Simpan</Button>
-        <Input label="Email" type="email" required />
-        <Input label="Cari" leftIcon={<SearchIcon size={16} />} size="sm" />
-        <Input label="Kode Promo" errorText="Kode tidak valid" />
-        <Textarea label="Deskripsi" required />
-        <Textarea disabled label="Bio" maxLength={200} showCount value="test" />
-        <Textarea label="Catatan" resize="none" errorText="Wajib diisi" />
-        <Select
-          label="Provinsi"
-          placeholder="Pilih provinsi"
-          leftIcon={<SearchIcon size={16} />}
-          options={[
-            { label: "DKI Jakarta", value: "jakarta" },
-            { label: "Jawa Barat", value: "jabar" },
-            { label: "Jawa Timur", value: "jatim" },
+
+        <Card>
+          <Card.Header>
+            <div>
+              <Card.Title>Detail Pesanan</Card.Title>
+              <Card.Subtitle>Order #12345</Card.Subtitle>
+            </div>
+            <Badge variant="success">Selesai</Badge>
+          </Card.Header>
+
+          <p className="text-sm text-neutral-600">Isi konten card di sini...</p>
+
+          <Card.Footer>
+            <Button variant="ghost" size="sm">Batal</Button>
+            <Button variant="primary" size="sm">Lihat Detail</Button>
+          </Card.Footer>
+        </Card>
+        {/* <Card padding="lg" shadow="sm">Lebih lega + ada shadow</Card>
+        <Card hoverable onClick={() => console.log("HI")}>Card yang bisa diklik</Card> */}
+        <Avatar src="https://i.pinimg.com/736x/76/cf/2c/76cf2c70697b3ba37f7d9e96c14ba4dc.jpg" name="Budi Santoso" />
+        <Avatar name="Budi Santoso" status="online" />  {/* langsung inisial "BS", nggak ada src */}
+        <AvatarGroup
+          avatars={[
+            { name: "Dewi Ayu" },
+            { name: "Budi Santoso" },
+            { name: "Citra Lestari" },
+            { name: "Dodi Pratama" },
+            { name: "Eka Putri" },
           ]}
-          required
+          max={3}
         />
-        <Select
-          label="Status"
-          errorText="Wajib pilih status"
-          options={[
-            { label: "Aktif", value: "active" },
-            { label: "Nonaktif", value: "inactive", disabled: true },
-          ]}
+        <Avatar name="AB" size="xs" />
+        <Avatar name="AB" size="xl" status="online" />
+        <Avatar
+          src="https://i.pinimg.com/736x/76/cf/2c/76cf2c70697b3ba37f7d9e96c14ba4dc.jpg"
+          name="Deasy Safitri"
         />
-        <Checkbox size="lg" label="Saya setuju dengan syarat & ketentuan" />
-        <Checkbox label="Saya setuju dengan syarat & ketentuan" />
-        <Checkbox
-          size="sm"
-          label="Saya setuju dengan syarat & ketentuan"
-          checked={agree}
-          onChange={(e) => setAgree(e.target.checked)}
+
+        {/* Interactive */}
+        <Avatar
+          src="https://i.pinimg.com/736x/76/cf/2c/76cf2c70697b3ba37f7d9e96c14ba4dc.jpg"
+          name="Deasy Safitri"
+          status="online"
+          onClick={() => console.log("Avatar clicked")}
         />
-        const [plan, setPlan] = useState("pro");
-        <RadioGroup
-          label="Pilih paket"
-          value={plan}
-          onChange={setPlan}
-          options={[
-            { label: "Gratis", value: "free" },
-            { label: "Pro", value: "pro", description: "Rp99.000/bulan" },
-            { label: "Enterprise", value: "enterprise", disabled: true },
-          ]}
-        />
-        <Switch
-          label="Notifikasi Email"
-          description="Dapetin update lewat email"
-          checked={notif}
-          onChange={(e) => setNotif(e.target.checked)}
-        />
-        <Switch label="Mode Gelap" size="lg" />
-        <Switch label="Fitur Beta" disabled />
-        <Switch
-          label="Wajib diaktifkan"
-          errorText="Fitur ini wajib nyala untuk lanjut"
+        <AvatarGroup
+          avatars={users}
+          max={4}
+          size="md"
+          onAvatarClick={(user) => {
+            console.log(user);
+          }}
+          onOverflowClick={(remainingUsers) => {
+            console.log(remainingUsers);
+          }}
         />
       </div>
     </div>
