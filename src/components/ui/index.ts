@@ -8,4 +8,6 @@ export { default as Switch } from "./Switch";
 export { default as Badge } from "./Badge";
 export { default as Alert } from "./Alert";
 export { default as Card } from "./Card";
-export { default as Avatar, AvatarGroup} from "./Avatar";
+export { default as Avatar, AvatarGroup } from "./Avatar";
+export { default as Tabs } from "./Tabs"
+export { default as Modal } from "./Modal"
