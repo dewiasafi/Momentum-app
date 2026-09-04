@@ -2,10 +2,12 @@ import { LockIcon, UserIcon } from "lucide-react";
 import {
 
   Button,
+  Divider,
   Modal,
   Tabs,
 } from "./components/ui";
 import { useState } from "react";
+import Accordion from "./components/ui/Accordion";
 
 
 function App() {
@@ -25,7 +27,16 @@ function App() {
       </h1>
       <div>
         <Button onClick={() => setOpen(true)}>Hapus Akun</Button>
-
+        <div className="flex items-center h-6">
+          <span>Beranda</span>
+          <Divider orientation="vertical" className="mx-3" />
+          <span>Produk</span>
+        </div>
+        <Accordion type="multiple" defaultOpen={["specs", "shipping"]}>
+          <Accordion.Item value="specs" title="Spesifikasi">...</Accordion.Item>
+          <Accordion.Item value="shipping" title="Info Pengiriman">...</Accordion.Item>
+          <Accordion.Item value="reviews" title="Ulasan">...</Accordion.Item>
+        </Accordion>
         <Modal open={open} onClose={() => setOpen(false)}>
           <Modal.Header onClose={() => setOpen(false)}>
             <Modal.Title>Hapus akun?</Modal.Title>

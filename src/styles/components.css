@@ -1,4 +1,5 @@
 @layer components {
+
   /* ==================== BUTTON ==================== */
   .btn {
     @apply inline-flex items-center justify-center gap-2 font-sans font-medium rounded-sm transition-colors duration-150 select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
@@ -263,9 +264,7 @@
     @apply bg-neutral-400;
   }
 
-  .switch-wrapper:hover:not(:has(.switch-input:disabled))
-    .switch-input:checked
-    ~ .switch-track {
+  .switch-wrapper:hover:not(:has(.switch-input:disabled)) .switch-input:checked~.switch-track {
     @apply bg-primary-300 border-primary-300;
   }
 
@@ -603,27 +602,27 @@
     @apply absolute left-1/2 bottom-full z-[60] -translate-x-1/2 mb-2 whitespace-nowrap rounded-md bg-neutral-50 text-neutral-700 font-medium opacity-0 pointer-events-none transition-opacity duration-150;
   }
 
-  .avatar:hover > .avatar-tooltip {
+  .avatar:hover>.avatar-tooltip {
     @apply opacity-100;
   }
 
-  .avatar-xs > .avatar-tooltip {
+  .avatar-xs>.avatar-tooltip {
     @apply px-1.5 py-0.5 text-[10px];
   }
 
-  .avatar-sm > .avatar-tooltip {
+  .avatar-sm>.avatar-tooltip {
     @apply px-2 py-1 text-xs;
   }
 
-  .avatar-md > .avatar-tooltip {
+  .avatar-md>.avatar-tooltip {
     @apply px-2.5 py-1 text-xs;
   }
 
-  .avatar-lg > .avatar-tooltip {
+  .avatar-lg>.avatar-tooltip {
     @apply px-3 py-1.5 text-sm;
   }
 
-  .avatar-xl > .avatar-tooltip {
+  .avatar-xl>.avatar-tooltip {
     @apply px-3 py-1.5 text-sm;
   }
 
@@ -631,7 +630,7 @@
     @apply flex items-center -space-x-2;
   }
 
-  .avatar-group > .avatar {
+  .avatar-group>.avatar {
     @apply ring-2 ring-white;
   }
 
@@ -648,7 +647,7 @@
     @apply absolute left-1/2 bottom-full z-50 -translate-x-1/2 -translate-y-2 rounded-lg bg-white p-2 border border-neutral-200 shadow-lg opacity-0 pointer-events-none transition-opacity duration-150;
   }
 
-  .avatar-overflow:hover > .avatar-overflow-tooltip {
+  .avatar-overflow:hover>.avatar-overflow-tooltip {
     @apply opacity-100 pointer-events-auto;
   }
 
@@ -664,7 +663,7 @@
     @apply top-full bottom-auto mt-2 z-[70];
   }
 
-  .avatar-overflow-group .avatar:hover > .avatar-tooltip {
+  .avatar-overflow-group .avatar:hover>.avatar-tooltip {
     @apply opacity-100;
   }
 
@@ -762,38 +761,46 @@
   }
 
   .tooltip-bubble {
-    @apply absolute z-50 px-2.5 py-1.5 rounded-md bg-neutral-800 text-white text-xs font-medium
-           whitespace-nowrap pointer-events-none;
+    @apply absolute z-50 px-2.5 py-1.5 rounded-md bg-neutral-800 text-white text-xs font-medium whitespace-nowrap pointer-events-none;
     @apply opacity-0 scale-95 transition-all duration-100;
   }
 
   .tooltip-visible {
     @apply opacity-100 scale-100;
   }
+
   .tooltip-top {
     @apply bottom-full left-1/2 -translate-x-1/2 mb-2;
   }
+
   .tooltip-bottom {
     @apply top-full left-1/2 -translate-x-1/2 mt-2;
   }
+
   .tooltip-left {
     @apply right-full top-1/2 -translate-y-1/2 mr-2;
   }
+
   .tooltip-right {
     @apply left-full top-1/2 -translate-y-1/2 ml-2;
   }
+
   .tooltip-arrow {
     @apply absolute w-2 h-2 bg-neutral-800 rotate-45;
   }
+
   .tooltip-top .tooltip-arrow {
     @apply -bottom-1 left-1/2 -translate-x-1/2;
   }
+
   .tooltip-bottom .tooltip-arrow {
     @apply -top-1 left-1/2 -translate-x-1/2;
   }
+
   .tooltip-left .tooltip-arrow {
     @apply -right-1 top-1/2 -translate-y-1/2;
   }
+
   .tooltip-right .tooltip-arrow {
     @apply -left-1 top-1/2 -translate-y-1/2;
   }
@@ -807,9 +814,11 @@
   .spinner-sm {
     @apply w-4 h-4 border-2;
   }
+
   .spinner-md {
     @apply w-6 h-6 border-2;
   }
+
   .spinner-lg {
     @apply w-8 h-8 border-[3px];
   }
@@ -817,9 +826,11 @@
   .spinner-neutral {
     @apply text-neutral-400;
   }
+
   .spinner-primary {
     @apply text-primary-500;
   }
+
   .spinner-white {
     @apply text-white;
   }
@@ -850,6 +861,7 @@
   .dropdown-panel-left {
     @apply left-0;
   }
+
   .dropdown-panel-right {
     @apply right-0;
   }
@@ -857,10 +869,12 @@
   .dropdown-item {
     @apply flex items-center gap-2 w-full px-3 py-2 text-sm text-left text-neutral-700 transition-colors cursor-pointer;
   }
+
   .dropdown-item:hover:not(:disabled),
   .dropdown-item-active {
     @apply bg-neutral-50;
   }
+
   .dropdown-item:disabled {
     @apply text-neutral-300 cursor-not-allowed;
   }
@@ -868,6 +882,7 @@
   .dropdown-item-danger {
     color: var(--color-error);
   }
+
   .dropdown-item-danger:hover:not(:disabled),
   .dropdown-item-danger.dropdown-item-active {
     background-color: var(--color-error-bg);
@@ -883,5 +898,149 @@
 
   .dropdown-label {
     @apply px-3 py-1.5 text-xs font-medium text-neutral-400 uppercase tracking-wide;
+  }
+
+  /* ACCORDION */
+
+  .accordion {
+    @apply divide-y divide-neutral-200 border border-neutral-200 rounded-lg;
+  }
+
+  .accordion-item-header {
+    @apply w-full flex items-center justify-between gap-4 px-4 py-3 text-left text-sm font-medium text-neutral-900 transition-colors cursor-pointer hover:bg-neutral-50;
+  }
+
+  .accordion-item-header:focus-visible {
+    @apply outline-none ring-2 ring-primary-300 ring-inset;
+  }
+
+  .accordion-icon {
+    @apply shrink-0 text-neutral-400 transition-transform duration-200;
+  }
+
+  .accordion-icon-open {
+    @apply rotate-180;
+  }
+
+  .accordion-panel {
+    @apply grid transition-[grid-template-rows] duration-200;
+    grid-template-rows: 0fr;
+  }
+
+  .accordion-panel-open {
+    grid-template-rows: 1fr;
+  }
+
+  .accordion-panel-content {
+    @apply overflow-hidden min-h-0 px-4 pb-4 text-sm text-neutral-600;
+  }
+
+  /* DIVIDER */
+
+  .divider-horizontal {
+    @apply w-full border-t border-neutral-200;
+  }
+
+  .divider-vertical {
+    @apply h-full border-l border-neutral-200 inline-block;
+  }
+
+  .divider-with-label {
+    @apply flex items-center gap-3 w-full;
+  }
+
+  .divider-with-label::before,
+  .divider-with-label::after {
+    content: "";
+    @apply flex-1 border-t border-neutral-200;
+  }
+
+  .divider-label-text {
+    @apply text-xs text-neutral-400 whitespace-nowrap;
+  }
+
+  /* PROGRESS */
+
+  
+  .progress-track {
+    @apply w-full bg-neutral-100 rounded-full overflow-hidden;
+  }
+ 
+  .progress-fill {
+    @apply h-full rounded-full transition-[width] duration-300 ease-out;
+  }
+ 
+  /* Sizes — ketinggian track */
+  .progress-sm { @apply h-1.5; }
+  .progress-md { @apply h-2; }
+  .progress-lg { @apply h-3; }
+ 
+  /* Warna fill — narik dari token semantik, konsisten sama Alert/Badge */
+  .progress-fill-primary { @apply bg-primary-500; }
+  .progress-fill-success { background-color: var(--color-success); }
+  .progress-fill-warning { background-color: var(--color-warning); }
+  .progress-fill-error { background-color: var(--color-error); }
+ 
+  .progress-label-row {
+    @apply flex items-center justify-between mb-1.5 text-sm;
+  }
+  .progress-label {
+    @apply font-medium text-neutral-700;
+  }
+  .progress-value {
+    @apply text-neutral-500;
+  }
+
+  /* BREADCRUMB */
+
+   .breadcrumb {
+    @apply flex items-center flex-wrap gap-1.5 text-sm;
+  }
+ 
+  .breadcrumb-link {
+    @apply text-neutral-500 hover:text-neutral-700 transition-colors;
+  }
+ 
+  .breadcrumb-current {
+    @apply text-neutral-900 font-medium;
+  }
+ 
+  .breadcrumb-separator {
+    @apply text-neutral-300 flex items-center;
+  }
+ 
+  .breadcrumb-item {
+    @apply flex items-center gap-1.5;
+  }
+
+  /* PAGINATION */
+  
+  .pagination {
+    @apply flex items-center gap-1;
+  }
+ 
+  .pagination-item {
+    @apply flex items-center justify-center min-w-9 h-9 px-2 rounded-md text-sm font-medium
+           text-neutral-600 transition-colors cursor-pointer;
+  }
+  .pagination-item:hover:not(:disabled):not(.pagination-item-active) {
+    @apply bg-neutral-100;
+  }
+  .pagination-item:disabled {
+    @apply text-neutral-300 cursor-not-allowed;
+  }
+  .pagination-item:focus-visible {
+    @apply outline-none ring-2 ring-primary-300;
+  }
+ 
+  .pagination-item-active {
+    @apply bg-primary-500 text-white;
+  }
+  .pagination-item-active:hover {
+    @apply bg-primary-500;
+  }
+ 
+  .pagination-ellipsis {
+    @apply flex items-center justify-center min-w-9 h-9 text-neutral-400 select-none;
   }
 }
