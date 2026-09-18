@@ -1,6 +1,6 @@
 import {
      ReactNode, useEffect, useRef, KeyboardEvent as ReactKeyboardEvent,
-     HTMLAttributes,
+     HTMLAttributes, useState,
 } from "react";
 import { createPortal } from "react-dom";
 
@@ -22,6 +22,8 @@ const SIZE_CLASSES: Record<ModalSize, string> = {
 };
 
 
+const EXIT_DURATION = 200;
+
 function Modal({
      open,
      onClose,
@@ -30,16 +32,29 @@ function Modal({
      closeOnBackdropClick = true,
      closeOnEscape = true
 }: ModalProps) {
-     const panelRef = useRef<HTMLDivElement>(null)
+     const [shouldRender, setShouldRender] = useState(open);
+     const [visible, setVisible] = useState(false);
+     const panelRef = useRef<HTMLDivElement>(null);
 
      useEffect(() => {
-          if (!open) return;
+          if (open) {
+               setShouldRender(true);
+               const enterTimer = setTimeout(() => setVisible(true), 10);
+               return () => clearTimeout(enterTimer);
+          }
+          setVisible(false);
+          const exitTimer = setTimeout(() => setShouldRender(false), EXIT_DURATION);
+          return () => clearTimeout(exitTimer);
+     }, [open]);
+
+     useEffect(() => {
+          if (!shouldRender) return;
           const original = document.body.style.overflow;
           document.body.style.overflow = "hidden";
           return () => {
                document.body.style.overflow = original;
           };
-     }, [open]);
+     }, [shouldRender]);
 
      useEffect(() => {
           if (!open || !closeOnEscape) return;
@@ -51,12 +66,12 @@ function Modal({
      }, [open, closeOnEscape, onClose]);
 
      useEffect(() => {
-          if (!open || !panelRef.current) return;
+          if (!visible || !panelRef.current) return;
           const focusable = panelRef.current.querySelector<HTMLElement>(
                'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
           );
           focusable?.focus();
-     }, [open]);
+     }, [visible]);
 
      function handleKeyDown(event: ReactKeyboardEvent<HTMLDivElement>) {
           if (event.key !== "Tab" || !panelRef.current) return;
@@ -77,11 +92,14 @@ function Modal({
           }
      }
 
-     if (!open) return;
+     if (!shouldRender) return null;
 
      return createPortal(
           <div
-               className="modal-backdrop"
+               className={[
+                    "modal-backdrop",
+                    visible ? "modal-backdrop-visible" : "modal-backdrop-enter",
+               ].join(" ")}
                onClick={(e) => {
                     if (closeOnBackdropClick && e.target === e.currentTarget) onClose();
                }}>
@@ -89,7 +107,11 @@ function Modal({
                     ref={panelRef}
                     role="dialog"
                     aria-modal="true"
-                    className={["modal-panel", SIZE_CLASSES[size]].join(" ")}
+                    className={[
+                         "modal-panel",
+                         SIZE_CLASSES[size],
+                         visible ? "modal-panel-visible" : "modal-panel-enter",
+                    ].join(" ")}
                     onKeyDown={handleKeyDown}
                >
                     {children}

@@ -716,10 +716,26 @@
   .modal-backdrop {
     @apply fixed inset-0 z-50 flex items-center justify-center p-4;
     background-color: rgb(0 0 0 / 0.3);
+    @apply fixed inset-0 z-50 flex items-center justify-center p-4 transition-opacity duration-200;
+    background-color: rgb(0 0 0 / 0.4);
+    backdrop-filter: blur(2px);
+  }
+  .modal-backdrop-enter {
+    @apply opacity-0 pointer-events-none;
+  }
+  .modal-backdrop-visible {
+    @apply opacity-100 pointer-events-auto;
   }
 
   .modal-panel {
     @apply relative w-full bg-white rounded-md shadow-xl flex flex-col max-h-[90v];
+    @apply relative w-full bg-white rounded-md shadow-xl flex flex-col max-h-[90vh] transition-all duration-200 ease-out;
+  }
+  .modal-panel-enter {
+    @apply opacity-0 scale-95 -translate-y-2;
+  }
+  .modal-panel-visible {
+    @apply opacity-100 scale-100 translate-y-0;
   }
 
   .modal-sm {
