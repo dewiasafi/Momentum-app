@@ -1,71 +1,68 @@
+@import "tailwindcss";
+
 @theme {
 
   /* ==========================================================
-     COLORS
+     COLORS (MOMENTUM DESIGN SYSTEM)
      ========================================================== */
 
-  /* ---------- Brand : Primary (Green) ---------- */
+  /* ---------- Brand : Momentum Green (Primary) ---------- */
+  --color-momentum-50: #F3F7EE;
+  --color-momentum-100: #E4EDD8;
+  --color-momentum-300: #6E8649; /* Reseda Green */
+  --color-momentum-500: #477023; /* Fern Green (Primary CTA) */
+  --color-momentum-700: #2D531A; /* Dark Moss */
+  --color-momentum-900: #0D330E; /* Pakistan Green */
+  --color-momentum-950: #071E07; /* Dark Green */
 
-  --color-primary-50: #F1FAF4;
-  --color-primary-100: #DDF3E5;
-  --color-primary-300: #A8D5BA;
-  --color-primary-500: #6FB98F;
-  --color-primary-700: #3E8E63;
-  --color-primary-900: #24543B;
+  /* ---------- Brand : Momentum Blue ---------- */
+  --color-momentum-blue-50: #F2F7FF;
+  --color-momentum-blue-100: #DCEAFF;
+  --color-momentum-blue-300: #A8C7FA;
+  --color-momentum-blue-500: #5B8DEF;
+  --color-momentum-blue-700: #315BB5;
 
-  /* ---------- Brand : Blue ---------- */
+  /* ---------- Brand : Momentum Yellow ---------- */
+  --color-momentum-yellow-50: #FFFBEA;
+  --color-momentum-yellow-100: #FFF3C4;
+  --color-momentum-yellow-300: #FFE7A0;
+  --color-momentum-yellow-500: #F5C542;
 
-  --color-blue-50: #F2F7FF;
-  --color-blue-100: #DCEAFF;
-  --color-blue-300: #A8C7FA;
-  --color-blue-500: #5B8DEF;
-  --color-blue-700: #315BB5;
+  /* ---------- Brand : Momentum Orange ---------- */
+  --color-momentum-orange-50: #FFF7ED;
+  --color-momentum-orange-100: #FFEDD5;
+  --color-momentum-orange-300: #FDBA74;
+  --color-momentum-orange-500: #FA990E;
+  --color-momentum-orange-700: #C2410C;
 
-  /* ---------- Brand : Yellow ---------- */
+  /* ---------- Momentum Neutral ---------- */
+  --color-momentum-white: #FFFFFF;
 
-  --color-yellow-50: #FFFBEA;
-  --color-yellow-100: #FFF3C4;
-  --color-yellow-300: #FFE7A0;
-  --color-yellow-500: #F5C542;
+  --color-momentum-neutral-50: #FAF7F2;
+  --color-momentum-neutral-100: #F3EFE8;
+  --color-momentum-neutral-200: #EAE7E2;
+  --color-momentum-neutral-300: #D6D1CA;
+  --color-momentum-neutral-400: #A8A29A;
+  --color-momentum-neutral-500: #78716C;
+  --color-momentum-neutral-600: #57534E;
+  --color-momentum-neutral-700: #44403C;
+  --color-momentum-neutral-800: #292524;
+  --color-momentum-neutral-900: #111111;
 
-  /* ---------- Brand : Pink ---------- */
+  --color-momentum-black: #000000;
 
-  --color-pink-50: #FFF4F7;
-  --color-pink-100: #FDE2EA;
-  --color-pink-300: #F8C8DC;
-  --color-pink-500: #E88BA7;
+  /* ---------- Momentum Semantic ---------- */
+  --color-momentum-success: #52C41A;
+  --color-momentum-success-bg: #F6FFED;
 
-  /* ---------- Neutral ---------- */
+  --color-momentum-warning: #FAAD14;
+  --color-momentum-warning-bg: #FFFBE6;
 
-  --color-white: #FFFFFF;
+  --color-momentum-error: #FF4D4F;
+  --color-momentum-error-bg: #FFF1F0;
 
-  --color-neutral-50: #FAF7F2;
-  --color-neutral-100: #F3EFE8;
-  --color-neutral-200: #EAE7E2;
-  --color-neutral-300: #D6D1CA;
-  --color-neutral-400: #A8A29A;
-  --color-neutral-500: #78716C;
-  --color-neutral-600: #57534E;
-  --color-neutral-700: #44403C;
-  --color-neutral-800: #292524;
-  --color-neutral-900: #111111;
-
-  --color-black: #000000;
-  --color-transparent: transparent;
-
-  /* ---------- Semantic ---------- */
-
-  --color-success: #52C41A;
-  --color-success-bg: #F6FFED;
-
-  --color-warning: #FAAD14;
-  --color-warning-bg: #FFFBE6;
-
-  --color-error: #FF4D4F;
-  --color-error-bg: #FFF1F0;
-
-  --color-info: #1890FF;
-  --color-info-bg: #E6F7FF;
+  --color-momentum-info: #1890FF;
+  --color-momentum-info-bg: #E6F7FF;
 
 
   /* ==========================================================
@@ -73,7 +70,6 @@
      ========================================================== */
 
   /* Font Family */
-
   --font-sans: "Inter", sans-serif;
   --font-serif: "Playfair Display", serif;
   --font-handwriting: "Caveat", cursive;

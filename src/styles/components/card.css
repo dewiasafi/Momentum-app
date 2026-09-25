@@ -1,0 +1,33 @@
+@layer components {
+  .card {
+    @apply bg-white border border-neutral-200 rounded-lg;
+  }
+
+  .card-padding-none { @apply p-0; }
+  .card-padding-sm { @apply p-4; }
+  .card-padding-md { @apply p-6; }
+  .card-padding-lg { @apply p-8; }
+
+  .card-shadow-sm { @apply shadow-sm; }
+  .card-shadow-md { @apply shadow-md; }
+
+  .card-hoverable {
+    @apply transition-shadow cursor-pointer hover:shadow-md;
+  }
+
+  .card-header {
+    @apply flex items-start justify-between gap-4 pb-4 mb-4 border-b border-neutral-200;
+  }
+
+  .card-title {
+    @apply text-base font-semibold text-neutral-700;
+  }
+
+  .card-subtitle {
+    @apply text-sm text-neutral-500 mt-0.5;
+  }
+
+  .card-footer {
+    @apply flex items-center justify-end gap-2 pt-4 mt-4 border-t border-neutral-200;
+  }
+}

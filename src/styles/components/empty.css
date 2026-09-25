@@ -1,0 +1,21 @@
+@layer components{
+  .empty-state {
+    @apply flex flex-col items-center justify-center text-center px-6 py-12;
+  }
+ 
+  .empty-state-icon {
+    @apply w-12 h-12 text-neutral-300 mb-4;
+  }
+ 
+  .empty-state-title {
+    @apply text-base font-semibold text-neutral-900;
+  }
+ 
+  .empty-state-description {
+    @apply text-sm text-neutral-500 mt-1 max-w-sm;
+  }
+ 
+  .empty-state-action {
+    @apply mt-4;
+  }
+}

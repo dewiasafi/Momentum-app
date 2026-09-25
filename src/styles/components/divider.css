@@ -1,0 +1,23 @@
+@layer components {
+      .divider-horizontal {
+    @apply w-full border-t border-neutral-200;
+  }
+
+  .divider-vertical {
+    @apply h-full border-l border-neutral-200 inline-block;
+  }
+
+  .divider-with-label {
+    @apply flex items-center gap-3 w-full;
+  }
+
+  .divider-with-label::before,
+  .divider-with-label::after {
+    content: "";
+    @apply flex-1 border-t border-neutral-200;
+  }
+
+  .divider-label-text {
+    @apply text-xs text-neutral-400 whitespace-nowrap;
+  }
+}

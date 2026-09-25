@@ -1,0 +1,31 @@
+@layer components{
+      
+  .progress-track {
+    @apply w-full bg-neutral-100 rounded-full overflow-hidden;
+  }
+ 
+  .progress-fill {
+    @apply h-full rounded-full transition-[width] duration-300 ease-out;
+  }
+ 
+  /* Sizes — ketinggian track */
+  .progress-sm { @apply h-1.5; }
+  .progress-md { @apply h-2; }
+  .progress-lg { @apply h-3; }
+ 
+  /* Warna fill — narik dari token semantik, konsisten sama Alert/Badge */
+  .progress-fill-primary { @apply bg-momentum-500; }
+  .progress-fill-success { background-color: var(--color-success); }
+  .progress-fill-warning { background-color: var(--color-warning); }
+  .progress-fill-error { background-color: var(--color-error); }
+ 
+  .progress-label-row {
+    @apply flex items-center justify-between mb-1.5 text-sm;
+  }
+  .progress-label {
+    @apply font-medium text-neutral-700;
+  }
+  .progress-value {
+    @apply text-neutral-500;
+  }
+}

@@ -1,0 +1,36 @@
+@layer components{
+    .slider {
+    @apply w-full h-1.5 rounded-full appearance-none cursor-pointer bg-neutral-200;
+  }
+ 
+  .slider:disabled {
+    @apply opacity-50 cursor-not-allowed;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    @apply appearance-none w-4 h-4 rounded-full bg-white border-2 border-momentum-500 cursor-pointer shadow-sm;
+    @apply transition-transform;
+  }
+  .slider::-webkit-slider-thumb:hover {
+    @apply scale-110;
+  }
+  .slider:focus-visible::-webkit-slider-thumb {
+    @apply ring-2 ring-momentum-300 ring-offset-1;
+  }
+ 
+  .slider::-moz-range-thumb {
+    @apply w-4 h-4 rounded-full bg-white border-2 border-momentum-500 cursor-pointer shadow-sm;
+    @apply transition-transform;
+  }
+  .slider::-moz-range-thumb:hover {
+    @apply scale-110;
+  }
+ 
+  .slider-row {
+    @apply flex items-center gap-3;
+  }
+ 
+  .slider-value {
+    @apply text-sm font-medium text-neutral-700 min-w-10 text-right;
+  }
+}

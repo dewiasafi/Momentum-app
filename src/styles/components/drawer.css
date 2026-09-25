@@ -1,0 +1,54 @@
+@layer components{
+  .drawer-backdrop {
+    @apply fixed inset-0 z-50 transition-opacity duration-200;
+    background-color: rgb(0 0 0 / 0.5);
+  }
+  .drawer-backdrop-enter { @apply opacity-0; }
+  .drawer-backdrop-visible { @apply opacity-100; }
+ 
+  .drawer-panel {
+    @apply fixed z-50 bg-white shadow-xl flex flex-col transition-transform duration-200;
+  }
+ 
+  /* Posisi + arah slide masing-masing sisi */
+  .drawer-right {
+    @apply top-0 right-0 h-full w-full max-w-sm;
+  }
+  .drawer-right.drawer-enter { @apply translate-x-full; }
+  .drawer-right.drawer-visible { @apply translate-x-0; }
+ 
+  .drawer-left {
+    @apply top-0 left-0 h-full w-full max-w-sm;
+  }
+  .drawer-left.drawer-enter { @apply -translate-x-full; }
+  .drawer-left.drawer-visible { @apply translate-x-0; }
+ 
+  .drawer-bottom {
+    @apply bottom-0 left-0 w-full max-h-[85vh] rounded-t-lg;
+  }
+  .drawer-bottom.drawer-enter { @apply translate-y-full; }
+  .drawer-bottom.drawer-visible { @apply translate-y-0; }
+ 
+  .drawer-top {
+    @apply top-0 left-0 w-full max-h-[85vh] rounded-b-lg;
+  }
+  .drawer-top.drawer-enter { @apply -translate-y-full; }
+  .drawer-top.drawer-visible { @apply translate-y-0; }
+ 
+  /* Header/body/footer reuse pola yang sama kayak Modal */
+  .drawer-header {
+    @apply flex items-start justify-between gap-4 px-6 py-4 border-b border-neutral-200 shrink-0;
+  }
+  .drawer-title {
+    @apply text-base font-semibold text-neutral-900;
+  }
+  .drawer-close {
+    @apply shrink-0 rounded-md p-1 text-neutral-400 transition-colors hover:bg-neutral-100 hover:text-neutral-600;
+  }
+  .drawer-body {
+    @apply px-6 py-4 overflow-y-auto flex-1;
+  }
+  .drawer-footer {
+    @apply flex items-center justify-end gap-2 px-6 py-4 border-t border-neutral-200 shrink-0;
+  }
+}

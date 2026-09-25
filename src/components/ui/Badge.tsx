@@ -1,6 +1,16 @@
 import { HTMLAttributes, ReactNode } from "react";
 
-export type BadgeVariant = "neutral" | "primary" | "success" | "warning" | "error" | "info";
+export type BadgeVariant = 
+  | "neutral" 
+  | "primary" 
+  | "success" 
+  | "warning" 
+  | "error" 
+  | "info"
+  | "blue"
+  | "cyan"
+  | "orange"
+  | "yellow";
 
 export type BadgeSize = "sm" | "md" | "lg";
 
@@ -8,7 +18,7 @@ export interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
      children: ReactNode;
      variant?: BadgeVariant;
      size?: BadgeSize;
-     dot?: boolean; // titik di kiri sebagai indikator aktif/online
+     dot?: boolean;
      onRemove?: () => void;
      removeLabel?: string;
 }
@@ -20,7 +30,11 @@ const VARIANT_CLASSES: Record<BadgeVariant, string> = {
      warning: "badge-warning",
      error: "badge-error",
      info: "badge-info",
-}
+     blue: "badge-blue",
+     cyan: "badge-cyan",
+     orange: "badge-orange",
+     yellow: "badge-yellow",
+};
 
 const SIZE_CLASSES: Record<BadgeSize, string> = {
      sm: "badge-sm",
@@ -39,12 +53,17 @@ export default function Badge({
      className = "",
      ...props
 }: BadgeProps) {
-     const classes = ["badge", VARIANT_CLASSES[variant], SIZE_CLASSES[size], className].filter(Boolean).join(" ");
+     const classes = [
+          "badge", 
+          VARIANT_CLASSES[variant], 
+          SIZE_CLASSES[size], 
+          className
+     ].filter(Boolean).join(" ");
 
      return (
           <span className={classes} {...props}>
                {dot && <span aria-hidden="true" className="badge-dot" />}
-               {children}
+               <span>{children}</span>
                {onRemove && (
                     <button
                          type="button"

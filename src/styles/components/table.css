@@ -1,0 +1,88 @@
+@layer components{
+.table-wrapper {
+    @apply w-full overflow-hidden rounded-xl border border-momentum-neutral-200 bg-white shadow-xs;
+  }
+
+  .table-container {
+    @apply overflow-x-auto;
+  }
+
+  .table {
+    @apply w-full border-collapse text-left text-sm text-momentum-neutral-700;
+  }
+
+  .table-head {
+    @apply text-xs font-semibold uppercase tracking-wider border-b border-momentum-neutral-200 bg-momentum-neutral-50 text-momentum-neutral-600;
+    color: inherit; /* Memastikan warna teks mengikuti parent/utility class */
+  }
+
+  .table-head th {
+    color: inherit;
+  }
+
+  .table-header-cell {
+    @apply px-6 py-3.5 transition-colors;
+    color: inherit;
+  }
+
+  .table-header-cell-sortable {
+    @apply cursor-pointer select-none hover:bg-black/5;
+  }
+
+  .table-sort-icon {
+    @apply inline-flex text-xs transition-transform duration-200 opacity-60;
+    color: inherit;
+  }
+
+  .table-sort-icon-active {
+    @apply opacity-100 font-bold;
+    color: inherit;
+  }
+
+  .table-body {
+    @apply divide-y divide-momentum-neutral-200 bg-white;
+  }
+
+  .table-body-row {
+    @apply transition-colors;
+  }
+
+  .table-body-row-hoverable:hover {
+    @apply bg-momentum-neutral-50/80;
+  }
+
+  .table-body-row-striped {
+    @apply bg-momentum-neutral-50/40;
+  }
+
+  .table-cell {
+    @apply px-6 py-4 text-momentum-neutral-700 whitespace-nowrap;
+  }
+
+
+  /* ==================== PAGINATION (BUILT-IN TABLE) ==================== */
+  
+  .pagination-wrapper {
+    @apply flex flex-col sm:flex-row items-center justify-between gap-4 px-6 py-3.5 border-t border-momentum-neutral-200 bg-momentum-neutral-50/50;
+  }
+
+  .pagination-info {
+    @apply text-sm text-momentum-neutral-600;
+  }
+
+  .pagination-nav {
+    @apply flex items-center gap-1.5;
+  }
+
+  .pagination-item {
+    @apply inline-flex items-center justify-center min-w-9 h-9 px-3 text-sm font-medium rounded-lg transition-all duration-150 select-none border border-momentum-neutral-200 bg-white text-momentum-neutral-700 hover:bg-momentum-neutral-50 hover:text-momentum-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-momentum-blue-500 disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none disabled:shadow-none;
+  }
+
+  .pagination-item-active {
+    @apply border-momentum-500 hover:border-momentum-700 font-semibold shadow-xs;
+  }
+
+  .pagination-ellipsis {
+    @apply inline-flex items-center justify-center px-2 text-momentum-neutral-400 select-none;
+  }
+}

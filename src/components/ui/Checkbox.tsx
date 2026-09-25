@@ -2,10 +2,17 @@ import { forwardRef, InputHTMLAttributes, ReactNode, useEffect, useRef } from "r
 import type { FieldSize } from "./field.styles";
 import FormField from "./FormField";
 
+export type CheckboxShape = "square" | "circle";
+
 const BOX_SIZE_CLASSES: Record<FieldSize, string> = {
      sm: "checkbox-box-sm",
      md: "checkbox-box-md",
      lg: "checkbox-box-lg",
+}
+
+const SHAPE_CLASSES: Record<CheckboxShape, string> = {
+     square: "rounded-xs",
+     circle: "rounded-full",
 }
 
 const LABEL_SIZE_CLASSES: Record<FieldSize, string> = {
@@ -28,7 +35,9 @@ export interface CheckboxProps
      helperText?: string;
      errorText?: string;
      containerClassName?: string;
-     size?: FieldSize
+     size?: FieldSize;
+     shape?: CheckboxShape;
+     borderClassName?: string; // <-- Tambahan untuk kustomisasi border oleh user
 }
 
 function mergeRefs<T>(
@@ -50,11 +59,13 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
                description,
                indeterminate = false,
                size = "md",
+               shape = "square",
                helperText,
                errorText,
                disabled = false,
                className = "",
                containerClassName = "",
+               borderClassName = "",
                id,
                ...props
           },
@@ -79,6 +90,7 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
 
                          return (
                               <div className="checkbox-wrapper">
+                                   {/* --- TEMPAT MASUKNYA KODE TERSEBUT --- */}
                                    <div className="checkbox-indicator">
                                         <input
                                              type="checkbox"
@@ -86,10 +98,18 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
                                              disabled={disabled}
                                              ref={mergeRefs(ref, internalRef)}
                                              aria-describedby={describedBy}
-                                             className={["peer", "checkbox-input", className].filter(Boolean).join(" ")}
+                                             className={["checkbox-input", className].filter(Boolean).join(" ")}
                                              {...props}
                                         />
-                                        <div aria-hidden="true" className={["checkbox-box", BOX_SIZE_CLASSES[size]].join(" ")}>
+                                        <div 
+                                             aria-hidden="true" 
+                                             className={[
+                                                  "checkbox-box", 
+                                                  BOX_SIZE_CLASSES[size], 
+                                                  SHAPE_CLASSES[shape],
+                                                  borderClassName 
+                                             ].filter(Boolean).join(" ")}
+                                        >
                                              {indeterminate ? (
                                                   <svg
                                                        width={ICON_SIZE_PX[size].dash}
@@ -106,7 +126,8 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
                                                        height={ICON_SIZE_PX[size].check}
                                                        viewBox="0 0 24 24"
                                                        fill="none"
-                                                       className="checkbox-icon">
+                                                       className="checkbox-icon"
+                                                  >
                                                        <path
                                                             d="M5 13l4 4L19 7"
                                                             stroke="currentColor"
@@ -118,6 +139,7 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
                                              )}
                                         </div>
                                    </div>
+                                   {/* ------------------------------------- */}
 
                                    {(label || description) && (
                                         <label
@@ -135,6 +157,5 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
           );
      }
 );
-
 Checkbox.displayName = "Checkbox";
-export default Checkbox
+export default Checkbox;

@@ -1,0 +1,64 @@
+@layer components {
+  .avatar {
+    @apply relative inline-flex items-center justify-center shrink-0 rounded-full align-middle;
+  }
+
+  .avatar-inner {
+    @apply w-full h-full flex items-center justify-center rounded-full overflow-hidden bg-neutral-200;
+  }
+
+  .avatar-image {
+    @apply w-full h-full object-cover;
+  }
+
+  .avatar-fallback {
+    @apply font-semibold text-white uppercase select-none;
+  }
+
+  .avatar-xs { @apply w-6 h-6 text-[10px]; }
+  .avatar-sm { @apply w-8 h-8 text-xs; }
+  .avatar-md { @apply w-10 h-10 text-sm; }
+  .avatar-lg { @apply w-12 h-12 text-base; }
+  .avatar-xl { @apply w-16 h-16 text-lg; }
+
+  .avatar-color-blue { @apply bg-blue-400; }
+  .avatar-color-green { @apply bg-green-400; }
+  .avatar-color-purple { @apply bg-purple-400; }
+  .avatar-color-pink { @apply bg-pink-400; }
+  .avatar-color-orange { @apply bg-orange-400; }
+  .avatar-color-cyan { @apply bg-cyan-400; }
+  .avatar-color-yellow { @apply bg-yellow-400; }
+  .avatar-color-red { @apply bg-red-400; }
+  .avatar-color-neutral { @apply bg-neutral-400; }
+
+  .avatar-status {
+    @apply absolute top-0 left-0 rounded-full border-2 border-white;
+  }
+
+  .avatar-status-online { background-color: var(--color-success); }
+  .avatar-status-offline { @apply bg-neutral-400; }
+  .avatar-status-busy { background-color: var(--color-error); }
+  .avatar-status-away { background-color: var(--color-warning); }
+
+  .avatar-xs .avatar-status { @apply w-1.5 h-1.5 border; }
+  .avatar-sm .avatar-status { @apply w-2 h-2 border; }
+  .avatar-md .avatar-status { @apply w-2.5 h-2.5; }
+  .avatar-lg .avatar-status { @apply w-3 h-3; }
+  .avatar-xl .avatar-status { @apply w-3.5 h-3.5; }
+
+  .avatar-tooltip {
+    @apply absolute left-1/2 bottom-full z-60 -translate-x-1/2 mb-2 whitespace-nowrap rounded-md bg-neutral-50 text-neutral-700 font-medium opacity-0 pointer-events-none transition-opacity duration-150;
+  }
+
+  .avatar:hover > .avatar-tooltip {
+    @apply opacity-100;
+  }
+
+  .avatar-group {
+    @apply flex items-center -space-x-2;
+  }
+
+  .avatar-group > .avatar {
+    @apply ring-2 ring-white;
+  }
+}

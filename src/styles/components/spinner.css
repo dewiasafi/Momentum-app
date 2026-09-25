@@ -1,0 +1,29 @@
+@layer components {
+  .spinner {
+    @apply inline-block animate-spin rounded-full border-current border-t-transparent;
+  }
+
+  .spinner-sm {
+    @apply w-4 h-4 border-2;
+  }
+
+  .spinner-md {
+    @apply w-6 h-6 border-2;
+  }
+
+  .spinner-lg {
+    @apply w-8 h-8 border-[3px];
+  }
+
+  .spinner-neutral {
+    @apply text-neutral-400;
+  }
+
+  .spinner-primary {
+    @apply text-momentum-500;
+  }
+
+  .spinner-white {
+    @apply text-white;
+  }
+}

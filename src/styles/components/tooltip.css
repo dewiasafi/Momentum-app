@@ -1,0 +1,51 @@
+@layer components{
+
+  .tooltip-wrapper {
+    @apply relative inline-flex;
+  }
+
+  .tooltip-bubble {
+    @apply absolute z-50 px-2.5 py-1.5 rounded-md bg-neutral-800 text-white text-xs font-medium whitespace-nowrap pointer-events-none;
+    @apply opacity-0 scale-95 transition-all duration-100;
+  }
+
+  .tooltip-visible {
+    @apply opacity-100 scale-100;
+  }
+
+  .tooltip-top {
+    @apply bottom-full left-1/2 -translate-x-1/2 mb-2;
+  }
+
+  .tooltip-bottom {
+    @apply top-full left-1/2 -translate-x-1/2 mt-2;
+  }
+
+  .tooltip-left {
+    @apply right-full top-1/2 -translate-y-1/2 mr-2;
+  }
+
+  .tooltip-right {
+    @apply left-full top-1/2 -translate-y-1/2 ml-2;
+  }
+
+  .tooltip-arrow {
+    @apply absolute w-2 h-2 bg-neutral-800 rotate-45;
+  }
+
+  .tooltip-top .tooltip-arrow {
+    @apply -bottom-1 left-1/2 -translate-x-1/2;
+  }
+
+  .tooltip-bottom .tooltip-arrow {
+    @apply -top-1 left-1/2 -translate-x-1/2;
+  }
+
+  .tooltip-left .tooltip-arrow {
+    @apply -right-1 top-1/2 -translate-y-1/2;
+  }
+
+  .tooltip-right .tooltip-arrow {
+    @apply -left-1 top-1/2 -translate-y-1/2;
+  }
+}

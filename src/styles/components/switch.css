@@ -1,0 +1,78 @@
+@layer components{
+    .switch-wrapper {
+    @apply flex items-start gap-2;
+  }
+
+  .switch-indicator {
+    @apply relative flex items-center shrink-0;
+  }
+
+  .switch-input {
+    @apply sr-only;
+  }
+
+  .switch-track {
+    @apply relative inline-flex items-center rounded-full border cursor-pointer transition-colors;
+    @apply bg-neutral-300 border-neutral-300;
+    @apply after:content-[''] after:absolute after:top-1/2 after:left-0.5 after:-translate-y-1/2;
+    @apply after:rounded-full after:bg-white after:shadow-sm after:transition-transform;
+
+    @apply peer-[:hover:not(:disabled)]:bg-neutral-400;
+    @apply peer-checked:bg-momentum-500 peer-checked:border-momentum-300;
+    @apply peer-checked:hover:bg-momentum-300 peer-checked:hover:border-momentum-300;
+    @apply peer-focus-visible:ring-2 peer-focus-visible:ring-momentum-300 peer-focus-visible:ring-offset-1;
+    @apply peer-disabled:opacity-50 peer-disabled:cursor-not-allowed;
+  }
+
+  .switch-wrapper:hover:not(:has(.switch-input:disabled)) .switch-track {
+    @apply bg-neutral-400;
+  }
+
+  .switch-wrapper:hover:not(:has(.switch-input:disabled)) .switch-input:checked~.switch-track {
+    @apply bg-momentum-300 border-momentum-300;
+  }
+
+  .switch-track-sm {
+    @apply w-8 h-4.5 after:w-3.5 after:h-3.5 peer-checked:after:translate-x-3.5;
+  }
+
+  .switch-track-md {
+    @apply w-10 h-5 after:w-4 after:h-4 peer-checked:after:translate-x-5;
+  }
+
+  .switch-track-lg {
+    @apply w-12 h-6 after:w-5 after:h-5 peer-checked:after:translate-x-6;
+  }
+
+  .switch-label {
+    @apply cursor-pointer text-neutral-700;
+  }
+
+  .switch-label-disabled {
+    @apply cursor-not-allowed text-neutral-400;
+  }
+
+  .switch-label-text {
+    @apply font-medium leading-5;
+    color: inherit;
+  }
+
+  .switch-label-text-sm {
+    @apply text-xs;
+  }
+
+  .switch-label-text-md {
+    @apply text-sm;
+  }
+
+  .switch-label-text-lg {
+    @apply text-base;
+  }
+
+  .switch-description {
+    @apply text-xs mt-0.5;
+    color: inherit;
+    opacity: 0.85;
+  }
+
+}

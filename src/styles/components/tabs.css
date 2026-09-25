@@ -1,0 +1,46 @@
+@layer components{
+    .tabs-list {
+    @apply flex items-center gap-1 border-b border-neutral-200;
+  }
+
+  .tab-head {
+    @apply relative flex items-center gap-2 px-4 py-2.5 text-sm font-medium text-neutral-500 transition-colors cursor-pointer -mb-px border-b-2 border-transparent;
+  }
+
+  .tab-head-icon {
+    @apply shrink-0 w-4 h-4 flex items-center justify-center;
+  }
+
+  .tab-head:hover:not(:disabled):not(.tab-head-active) {
+    @apply text-neutral-700;
+  }
+
+  .tab-head:disabled {
+    @apply text-neutral-300 cursor-not-allowed;
+  }
+
+  .tab-head:focus-visible {
+    @apply outline-none ring-2 ring-momentum-300 rounded-sm;
+  }
+
+  .tab-head-active {
+    @apply text-momentum-700 border-momentum-500;
+  }
+
+  .tab-panel {
+    @apply pt-4;
+  }
+
+  .tabs-list-pill {
+    @apply border-b-0 bg-neutral-100 p-1 rounded-lg gap-0;
+  }
+
+  .tab-head-pill {
+    @apply mb-0 border-b-0 rounded-md px-3 py-1.5;
+  }
+
+  .tab-head-pill.tab-head-active {
+    @apply bg-white text-neutral-900 shadow-sm;
+  }
+
+}

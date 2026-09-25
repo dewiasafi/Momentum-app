@@ -1,0 +1,65 @@
+@layer components {
+  .badge {
+    @apply inline-flex items-center gap-1.5 font-medium rounded-sm transition-colors select-none whitespace-nowrap;
+  }
+
+  .badge-sm {
+    @apply px-2 py-1 text-[11px];
+  }
+
+  .badge-md {
+    @apply px-3 py-1.5 text-xs;
+  }
+
+  .badge-lg {
+    @apply px-4 py-2 text-sm;
+  }
+
+  .badge-neutral {
+    @apply bg-momentum-neutral-100 text-momentum-neutral-700;
+  }
+
+  .badge-primary {
+    @apply bg-momentum-50 text-momentum-700;
+  }
+
+  .badge-success {
+    @apply bg-momentum-success-bg text-momentum-success;
+  }
+
+  .badge-warning {
+    @apply bg-momentum-warning-bg text-momentum-warning;
+  }
+
+  .badge-error {
+    @apply bg-momentum-error-bg text-momentum-error;
+  }
+
+  .badge-info {
+    @apply bg-momentum-info-bg text-momentum-info;
+  }
+
+  .badge-blue {
+    @apply bg-momentum-blue-50 text-momentum-blue-700;
+  }
+
+  .badge-cyan {
+    @apply bg-momentum-blue-100 text-momentum-blue-700;
+  }
+
+  .badge-orange {
+    @apply bg-momentum-orange-50 text-momentum-orange-700;
+  }
+
+  .badge-yellow {
+    @apply bg-momentum-yellow-50 text-momentum-neutral-800;
+  }
+
+  .badge-dot {
+    @apply w-1.5 h-1.5 rounded-full bg-current shrink-0;
+  }
+
+  .badge-remove {
+    @apply inline-flex items-center justify-center p-0.5 rounded-full hover:bg-black/10 transition-colors cursor-pointer shrink-0 ml-0.5 -mr-1;
+  }
+}
